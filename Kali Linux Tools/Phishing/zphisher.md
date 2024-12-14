@@ -1,5 +1,7 @@
 # Create Phishing Site
 
+[**zphisher**](https://github.com/htr-tech/zphisher/tree/master)
+
 ### Installation
 
 - Just, Clone this repository -
@@ -110,7 +112,72 @@ $ zphisher
 
 **Keep in mind that while the technical steps may seem straightforward, conducting phishing attacks is illegal and unethical. It can lead to severe legal consequences and harm to individuals and organizations. It’s essential to use your skills and knowledge for positive, legal, and ethical purposes. If you’re interested in cybersecurity, consider pursuing it in a legitimate and ethical manner, such as through ethical hacking or penetration testing.**
 
-![image](https://github.com/user-attachments/assets/73c5aeb5-c1d3-4b84-bdab-caf3293ed931)
+
+# Create Phishing Site Without Coding
+
+_You shall not misuse the information to gain unauthorized access to someones social media. However you may try out this at your own risk._
+
+## Step 1: Open Source tool name zphisher install into you Kali Linux Virtual Machine or in any Linux version Follow the guide:
+
+**Installation**
+
+Just, Clone this repository
+
+```–git clone --depth=1 https://github.com/htr-tech/zphisher.git```
+
+**Now go to cloned directory and run**
+
+```cd zphisher```
+
+```bash zphisher.sh```
+
+**On first launch, It’ll install the dependencies and that’s it. Zphisher is installed.**
+
+![](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Phishing/assets/1.png)
+
+To Open the Tool You first have to go into directory in which you install the tool… Then Type: ```bash zphisher.sh```
+
+**This page will open on terminal**
+
+![](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Phishing/assets/2.png)
 
 
+> Now You have Select any option, you want to create the page…
+> Page will start creating after creating page it will generate the link to page…
 
+> You just have to set host.
+
+> You can also change port number, If you want set custom post set any open port where page can collect data send it to server.
+
+[](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Phishing/assets/3.png)
+
+[](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Phishing/assets/4.png)
+
+
+It will open the fake Facebook or any page you select in the options that will look like original…
+
+## Step 2: Deliver this fake site to Targeted Email
+
+You can send it through Google Email Service or You can Use [Mail Chimp](https://mailchimp.com/) Like services to automate the email.
+
+You can Also customize the link or you can short it use [any link shorten services](https://www.shorturl.at/).
+
+## Step 3: Wait for You Target to open and fill the link credential…
+
+When some fill the link it’s look like this…
+
+![](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Phishing/assets/5.png)
+
+# It will also tells the victim IP Address.
+
+# Connect With Me:
+
+Twitter: https://twitter.com/awJunaid_
+
+LinkedIn: www.linkedin.com/in/aw-junaid/
+
+Twitch: www.twitch.tv/awjunaid
+
+Youtube: www.youtube.com/@awjunaid/
+
+Facebook: www.facebook.com/awjuna1d
