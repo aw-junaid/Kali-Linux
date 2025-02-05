@@ -35,23 +35,87 @@ dnsenum example.com
 
 ---
 
-### **Common Options**
-Here are some of the most commonly used options:
+### **General Usage**
+The basic syntax for `DNSenum` is:
+```bash
+dnsenum [Options] <domain>
+```
+- Replace `<domain>` with the target domain you want to enumerate (e.g., `example.com`).
+
+---
+
+### **General Options**
+These options control the overall behavior of `DNSenum`.
 
 | Option                  | Description                                                                 |
 |-------------------------|-----------------------------------------------------------------------------|
-| `--threads <number>`    | Number of threads to use (default: 5).                                      |
-| `-r`                    | Enable recursive subdomain brute-forcing.                                   |
-| `-f <file>`             | Use a custom wordlist for brute-forcing subdomains.                         |
-| `-o <file>`             | Save the output to a file (XML format).                                     |
-| `--dnsserver <server>`  | Use a specific DNS server for queries.                                      |
-| `--enum`                | Perform a full enumeration (default behavior).                              |
+| `--dnsserver <server>`  | Use a specific DNS server for A, NS, and MX queries.                        |
+| `--enum`                | Shortcut for `--threads 5 -s 15 -w` (performs a full enumeration).          |
+| `-h, --help`            | Display this help menu.                                                     |
 | `--noreverse`           | Skip reverse DNS lookups.                                                   |
-| `--private`             | Show private IP addresses in the results.                                   |
-| `--subdomains`          | Only enumerate subdomains.                                                  |
-| `--help`                | Display the help menu.                                                      |
+| `--nocolor`             | Disable colored output in the terminal.                                     |
+| `--private`             | Show and save private IP addresses in a file named `domain_ips.txt`.        |
+| `--subfile <file>`      | Save all valid subdomains to the specified file.                            |
+| `-t, --timeout <value>` | Set the TCP/UDP timeout in seconds (default: 10 seconds).                   |
+| `--threads <value>`     | Set the number of threads for parallel queries (default: 5).                |
+| `-v, --verbose`         | Enable verbose mode to show progress and error messages.                    |
 
 ---
+
+### **Google Scraping Options**
+These options control how `DNSenum` scrapes subdomains from Google search results.
+
+| Option                  | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| `-p, --pages <value>`   | Number of Google search pages to process (default: 5).                      |
+| `-s, --scrap <value>`   | Maximum number of subdomains to scrape from Google (default: 15).           |
+
+---
+
+### **Brute Force Options**
+These options control the brute-forcing of subdomains.
+
+| Option                  | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| `-f, --file <file>`     | Use a custom wordlist file for brute-forcing subdomains.                    |
+| `-u, --update <a|g|r|z>`| Update the wordlist file (`-f`) with valid subdomains:                      |
+|                         | `a` (all): Update using all results.                                        |
+|                         | `g`: Update using only Google scraping results.                             |
+|                         | `r`: Update using only reverse lookup results.                              |
+|                         | `z`: Update using only zone transfer results.                               |
+| `-r, --recursion`       | Perform recursive brute-forcing on discovered subdomains with NS records.   |
+
+---
+
+### **WHOIS Netrange Options**
+These options control WHOIS queries for network ranges.
+
+| Option                  | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| `-d, --delay <value>`   | Maximum delay (in seconds) between WHOIS queries (default: 3 seconds).      |
+| `-w, --whois`           | Perform WHOIS queries on C-class network ranges.                            |
+|                         | **Warning**: This can generate large netranges and take a long time.        |
+
+---
+
+### **Reverse Lookup Options**
+These options control reverse DNS lookups.
+
+| Option                  | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| `-e, --exclude <regexp>`| Exclude PTR records matching the regexp from reverse lookup results.        |
+
+---
+
+### **Output Options**
+These options control the output format and file.
+
+| Option                  | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| `-o, --output <file>`   | Save the results in XML format (can be imported into MagicTree).            |
+
+---
+
 
 ### **Step-by-Step Guide**
 
