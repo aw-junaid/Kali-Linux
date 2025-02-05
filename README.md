@@ -44,7 +44,7 @@
 # Information Gathering Tools
 
 ## DNS Analysis
-- **dnsenum**: Multithreaded tool for DNS enumeration.
+- [**dnsenum**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsenum.md): Multithreaded tool for DNS enumeration.
 - **dnsmap**: Subdomain brute-forcing tool.
 - **dnsrecon**: Perform DNS enumeration and zone transfers.
 - **fierce**: DNS reconnaissance tool for locating non-contiguous IP space.
