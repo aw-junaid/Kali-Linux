@@ -1,3 +1,5 @@
+![DNSenum](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Images/dnsneum.png)
+
 `DNSenum` is a powerful DNS enumeration tool used to gather information about a domain. It is commonly used in penetration testing and reconnaissance to discover DNS information, such as subdomains, MX records, nameservers, and more.
 
 ---
