@@ -40,22 +40,22 @@ This repository contains tools and scripts sourced from various GitHub repositor
 
 # Table of Content
 
-## Phishing
+### Phishing
 - [zphisher](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Phishing/zphisher.md)
 
-# Information Gathering Tools
+## Information Gathering Tools
 
-## DNS Analysis
+### DNS Analysis
 - [**dnsenum**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsenum.md): Multithreaded tool for DNS enumeration.
 - **dnsmap**: Subdomain brute-forcing tool.
 - **dnsrecon**: Perform DNS enumeration and zone transfers.
 - **fierce**: DNS reconnaissance tool for locating non-contiguous IP space.
 
-## IDS/IPS Identification
+### IDS/IPS Identification
 - **lbd**: Load Balancer Detector for identifying load balancers.
 - **wafw00f**: Detect web application firewalls (WAFs).
 
-## Live Host Identification
+### Live Host Identification
 - **arping**: ARP-level ping to find live hosts on a network.
 - **fping**: High-performance ping sweep tool.
 - **hping3**: TCP/IP packet assembler for testing network security.
@@ -64,50 +64,50 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - **thcping6**: Ping IPv6 hosts using TCP.
 - **unicornscan**: Network reconnaissance and port scanner.
 
-## Network & Port Scanners
+### Network & Port Scanners
 - **nmap**: Network mapping and port scanning tool.
 
-## OSINT Analysis
+### OSINT Analysis
 - **maltego**: Open-source intelligence and forensics platform.
 - **spiderfoot**: Automated OSINT tool for threat intelligence.
 
-## Route Analysis
+### Route Analysis
 - **netdiscover**: Active/passive reconnaissance tool for networks.
 - **netmask**: Analyzes and manages IP subnets.
 
-## SMB Analysis
+### SMB Analysis
 - **nbtscan**: Scans for NetBIOS name information.
 - **smbscan**: Assesses SMB shares for security issues.
 
-## SMTP Analysis
+### SMTP Analysis
 - **smtp-user-enum**: Enumerates valid SMTP users.
 - **swaks**: Swiss Army Knife for SMTP testing.
 
-## SNMP Analysis
+### SNMP Analysis
 - **onesixtyone**: SNMP scanner for network devices.
 - **snmp-check**: Enumerates SNMP devices and data.
 
-## SSL Analysis
+### SSL Analysis
 - **ssldump**: Analyzes SSL connections.
 - **sslh**: Multiplexer for SSL and non-SSL connections.
 - **sslscan**: Tests SSL/TLS ciphers and vulnerabilities.
 - **sslyze**: Audits SSL/TLS configurations.
 
-## Additional Tools
+### Additional Tools
 - **amass**: Subdomain enumeration tool.
 - **dmitry**: Deepmagic Information Gathering Tool.
 - **ike-scan**: Identifies VPN servers and devices using IKE.
 - **recon-ng**: OSINT framework for automated reconnaissance.
 
 
-# Vulnerability Analysis Tools
+### Vulnerability Analysis Tools
 - **generic_chunked**: Checks for vulnerabilities in chunked encoding.
 - **voiphopper**: Tests VLAN hopping in VoIP networks.
 - **nikto**: Web server vulnerability scanner.
 - **nmap**: Network scanning with vulnerability detection scripts.
 - **unix-privesc-check**: Identifies privilege escalation paths on Unix systems.
 
-# Web Application Analysis Tools
+### Web Application Analysis Tools
 - **cutycapt**: Captures web screenshots.
 - **dirb**: Scans directories and files on web servers.
 - **dirbuster**: Directory brute-forcing tool.
@@ -123,9 +123,9 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - **webshells**: Backdoor web shells for post-exploitation.
 - **sqlmap**: Automates detection and exploitation of SQL injection flaws.
 
-# Password Attacks Tools
+## Password Attacks Tools
 
-## Offline Attacks
+### Offline Attacks
 - **chntpw**: Resets Windows passwords.
 - **hash-identifier**: Identifies hash types.
 - **hashcat**: GPU-accelerated password cracker.
@@ -135,20 +135,20 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - **samdump2**: Extracts hashes from Windows SAM files.
 - **truecrack**: Cracks TrueCrypt containers.
 
-## Online Attacks
+### Online Attacks
 - **hydra**: Parallelized network login cracker.
 - **medusa**: Fast network brute-forcing tool.
 - **ncrack**: High-speed network authentication cracker.
 - **thc-pptp-bruter**: Cracks PPTP VPN logins.
 
-## Passing The Hash Tools
+### Passing The Hash Tools
 - **crackmapexec**: Post-exploitation and penetration testing tool.
 - **evil-winrm**: Remote administration tool for Windows.
 - **mimikatz**: Extracts credentials from memory.
 - **smbmap**: Enumerates and interacts with SMB shares.
 - **xfreedp**: Exploits Remote Desktop Protocol (RDP).
 
-## Password Profiling & Wordlists
+### Password Profiling & Wordlists
 - **cewl**: Generates wordlists from web content.
 - **crunch**: Creates custom wordlists.
 - **rsmangler**: Generates mutations of input wordlists.
