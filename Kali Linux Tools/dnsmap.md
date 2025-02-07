@@ -1,4 +1,4 @@
-![dnsmap](https://github.com/user-attachments/assets/8b8a0961-8b96-4379-9f61-89decc3b498e)
+![dnsmap](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Images/dnsmap.png)
 
 ### What is DNSMap?
 
