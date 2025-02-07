@@ -46,14 +46,14 @@ This repository contains tools and scripts sourced from various GitHub repositor
 ## Information Gathering Tools
 
 ### DNS Analysis
-- [**dnsenum**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsenum.md): Multithreaded tool for DNS enumeration.
-- [**dnsmap**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsmap.md): Subdomain brute-forcing tool.
-- [**dnsrecon**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsrecon.md): Perform DNS enumeration and zone transfers.
-- [**fierce**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/fierce.md): DNS reconnaissance tool for locating non-contiguous IP space.
+- [**dnsenum**: Multithreaded tool for DNS enumeration.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsenum.md)
+- [**dnsmap**: Subdomain brute-forcing tool.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsmap.md)
+- [**dnsrecon**: Perform DNS enumeration and zone transfers.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsrecon.md)
+- [**fierce**: DNS reconnaissance tool for locating non-contiguous IP space.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/fierce.md)
 
 ### IDS/IPS Identification
-- [**lbd**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/lbd.md): Load Balancer Detector for identifying load balancers.
-- **wafw00f**: Detect web application firewalls (WAFs).
+- [**lbd**: Load Balancer Detector for identifying load balancers.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/lbd.md)
+- [**wafw00f**: Detect web application firewalls (WAFs).](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/wafw00f.md)
 
 ### Live Host Identification
 - **arping**: ARP-level ping to find live hosts on a network.
