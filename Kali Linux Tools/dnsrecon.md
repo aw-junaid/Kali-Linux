@@ -45,19 +45,87 @@ DNSRecon is pre-installed on many penetration testing distributions like Kali Li
 1. **Enumerate DNS Records**:
    To retrieve all DNS records for a domain:
    ```bash
-   dnsrecon -d example.com
+   dnsrecon -d hackthissite.org
    ```
 
 2. **Perform a Zone Transfer**:
    To attempt a DNS zone transfer (AXFR):
-   ```bash
-   dnsrecon -d example.com -t axfr
-   ```
+```bash
+dnsrecon -d hackthissite.org -t axfr
+
+┌──(komugi㉿komugi)-[~]
+└─$ dnsrecon -d hackthissite.org
+[*] std: Performing General Enumeration against: hackthissite.org...
+[-] A timeout error occurred please make sure you can reach the target DNS Servers
+[-] directly and requests are not being filtered. Increase the timeout from 3.0 second
+[-] to a higher number with --lifetime <time> option.
+                                                                                                                                     
+┌──(komugi㉿komugi)-[~]
+└─$ dnsrecon -d hackthissite.org -t axfr
+[*] Checking for Zone Transfer for hackthissite.org name servers
+[*] Resolving SOA Record
+[+]      SOA c.ns.buddyns.com 116.203.6.3
+[+]      SOA c.ns.buddyns.com 2a01:4f8:1c0c:8115::3
+[*] Resolving NS Records
+[*] NS Servers found:
+[+]      NS f.ns.buddyns.com 23.27.101.128
+[+]      NS f.ns.buddyns.com 2606:fc40:4003:26::a
+[+]      NS g.ns.buddyns.com 192.184.93.99
+[+]      NS g.ns.buddyns.com 2604:180:1:92a::3
+[+]      NS c.ns.buddyns.com 116.203.6.3
+[+]      NS c.ns.buddyns.com 2a01:4f8:1c0c:8115::3
+[+]      NS h.ns.buddyns.com 103.25.56.55
+[+]      NS h.ns.buddyns.com 2406:d500:2::de4f:f105
+[+]      NS j.ns.buddyns.com 37.143.61.179
+[+]      NS j.ns.buddyns.com 2a01:a500:2766::5c3f:d10b
+[*] Removing any duplicate NS server IP Addresses...
+[*]  
+[*] Trying NS server 192.184.93.99
+[+] 192.184.93.99 Has port 53 TCP Open
+[-] Zone Transfer Failed (Zone transfer error: NOTAUTH)
+[*]  
+[*] Trying NS server 23.27.101.128
+[+] 23.27.101.128 Has port 53 TCP Open
+[-] Zone Transfer Failed (Zone transfer error: NOTAUTH)
+[*]  
+[*] Trying NS server 116.203.6.3
+[+] 116.203.6.3 Has port 53 TCP Open
+[-] Zone Transfer Failed (Zone transfer error: NOTAUTH)
+[*]  
+[*] Trying NS server 2604:180:1:92a::3
+[-] Zone Transfer Failed for 2604:180:1:92a::3!
+[-] Port 53 TCP is being filtered
+[*]  
+[*] Trying NS server 103.25.56.55
+[+] 103.25.56.55 Has port 53 TCP Open
+[-] Zone Transfer Failed (Zone transfer error: NOTAUTH)
+[*]  
+[*] Trying NS server 2a01:a500:2766::5c3f:d10b
+[-] Zone Transfer Failed for 2a01:a500:2766::5c3f:d10b!
+[-] Port 53 TCP is being filtered
+[*]  
+[*] Trying NS server 2606:fc40:4003:26::a
+[-] Zone Transfer Failed for 2606:fc40:4003:26::a!
+[-] Port 53 TCP is being filtered
+[*]  
+[*] Trying NS server 2a01:4f8:1c0c:8115::3
+[-] Zone Transfer Failed for 2a01:4f8:1c0c:8115::3!
+[-] Port 53 TCP is being filtered
+[*]  
+[*] Trying NS server 37.143.61.179
+[+] 37.143.61.179 Has port 53 TCP Open
+[-] Zone Transfer Failed (Zone transfer error: NOTAUTH)
+[*]  
+[*] Trying NS server 2406:d500:2::de4f:f105
+[-] Zone Transfer Failed for 2406:d500:2::de4f:f105!
+[-] Port 53 TCP is being filtered
+
+```
 
 3. **Brute-Force Subdomains**:
    To brute-force subdomains using a wordlist:
    ```bash
-   dnsrecon -d example.com -D /path/to/wordlist.txt -t brt
+   dnsrecon -d hackthissite.org -D /path/to/wordlist.txt -t brt
    ```
 
 4. **Reverse DNS Lookup**:
@@ -69,13 +137,13 @@ DNSRecon is pre-installed on many penetration testing distributions like Kali Li
 5. **Save Results to a File**:
    To save the output in a specific format (CSV, XML, or JSON):
    ```bash
-   dnsrecon -d example.com -c output.csv
+   dnsrecon -d hackthissite.org -c output.csv
    ```
 
 6. **Check for Cache Snooping**:
    To check for cached DNS records:
    ```bash
-   dnsrecon -d example.com -t snoop
+   dnsrecon -d hackthissite.org -t snoop
    ```
 
 ---
@@ -83,7 +151,7 @@ DNSRecon is pre-installed on many penetration testing distributions like Kali Li
 **Key Options and Their Explanations:**
 
 * **Target Specification:**
-    * `-d DOMAIN`:  **Required.** Specifies the target domain name (e.g., `-d example.com`).  This is the domain you want to perform DNS reconnaissance on.
+    * `-d DOMAIN`:  **Required.** Specifies the target domain name (e.g., `-d hackthissite.org`).  This is the domain you want to perform DNS reconnaissance on.
 * **Name Server Options:**
     * `-n NS_SERVER`: Specifies a specific name server to query (e.g., `-n 8.8.8.8`). If not provided, `dnsrecon` will try to find authoritative name servers for the target domain.
 * **Range Options (for reverse lookups):**
@@ -146,9 +214,52 @@ DNSRecon is pre-installed on many penetration testing distributions like Kali Li
 ### **Advanced Options**:
 - **Specify a DNS Server**:
   Use the `-n` option to specify a DNS server:
-  ```bash
-  dnsrecon -d example.com -n 8.8.8.8
-  ```
+```bash
+dnsrecon -d hackthissite.org -n 8.8.8.8
+┌──(komugi㉿komugi)-[~]
+└─$ dnsrecon -d hackthissite.org -n 8.8.8.8
+[*] std: Performing General Enumeration against: hackthissite.org...
+[-] DNSSEC is not configured for hackthissite.org
+[*]      SOA c.ns.buddyns.com 116.203.6.3
+[*]      SOA c.ns.buddyns.com 2a01:4f8:1c0c:8115::3
+[*]      NS g.ns.buddyns.com 192.184.93.99
+[*]      NS g.ns.buddyns.com 2604:180:1:92a::3
+[*]      NS c.ns.buddyns.com 116.203.6.3
+[*]      NS c.ns.buddyns.com 2a01:4f8:1c0c:8115::3
+[*]      NS f.ns.buddyns.com 23.27.101.128
+[*]      NS f.ns.buddyns.com 2606:fc40:4003:26::a
+[*]      NS j.ns.buddyns.com 37.143.61.179
+[*]      NS j.ns.buddyns.com 2a01:a500:2766::5c3f:d10b
+[*]      NS h.ns.buddyns.com 103.25.56.55
+[*]      NS h.ns.buddyns.com 2406:d500:2::de4f:f105
+[*]      MX aspmx.l.google.com 142.251.173.27
+[*]      MX aspmx3.googlemail.com 142.251.9.26
+[*]      MX alt1.aspmx.l.google.com 142.250.153.27
+[*]      MX aspmx4.googlemail.com 142.250.150.26
+[*]      MX aspmx5.googlemail.com 74.125.200.26
+[*]      MX aspmx2.googlemail.com 142.250.153.26
+[*]      MX alt2.aspmx.l.google.com 142.251.9.27
+[*]      MX aspmx.l.google.com 2a00:1450:400c:c0b::1a
+[*]      MX aspmx3.googlemail.com 2a00:1450:4025:c03::1a
+[*]      MX alt1.aspmx.l.google.com 2a00:1450:4013:c16::1a
+[*]      MX aspmx4.googlemail.com 2a00:1450:4010:c1c::1a
+[*]      MX aspmx5.googlemail.com 2404:6800:4003:c00::1b
+[*]      MX aspmx2.googlemail.com 2a00:1450:4013:c16::1b
+[*]      MX alt2.aspmx.l.google.com 2a00:1450:4025:c03::1b
+[*]      A hackthissite.org 137.74.187.104
+[*]      A hackthissite.org 137.74.187.103
+[*]      A hackthissite.org 137.74.187.102
+[*]      A hackthissite.org 137.74.187.101
+[*]      A hackthissite.org 137.74.187.100
+[*]      SPF v=spf1 a mx ip4:137.74.187.96 ip4:137.74.187.97 ip4:137.74.187.98 a:mail.hackthissite.org include:aspmx.googlemail.com include:spf.hackmail.org -all
+[*]      TXT hackthissite.org t-verify=e3f12c9c23e2e475563590326df31a12
+[*]      TXT hackthissite.org v=spf1 a mx ip4:137.74.187.96 ip4:137.74.187.97 ip4:137.74.187.98 a:mail.hackthissite.org include:aspmx.googlemail.com include:spf.hackmail.org -all
+[*]      TXT hackthissite.org HARICA-aaaDeHpueWSi2N4aEvO
+[*]      TXT _dmarc.hackthissite.org v=DMARC1;p=quarantine;sp=quarantine;fo=0:1:d:s;aspf=r;adkim=r;ri=86400;pct=25;rua=mailto:8rbjyycl@ag.dmarcian.eu;ruf=mailto:8rbjyycl@fr.dmarcian.eu;
+[*] Enumerating SRV Records
+[-] No SRV Records Found for hackthissite.org
+
+```
 
 - **Threading**:
   Use the `-t` option with a number to specify the number of threads for brute-forcing:
