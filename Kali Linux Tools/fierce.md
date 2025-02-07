@@ -22,7 +22,7 @@
 
 ### **Basic Usage:**
 ```bash
-fierce -dns example.com
+fierce -dns hackthissite.org
 ```
 This command runs a basic DNS enumeration against `example.com`.
 
@@ -63,12 +63,12 @@ This command runs a basic DNS enumeration against `example.com`.
 
  **Basic domain scan:**
    ```bash
-   fierce -dns example.com
+   fierce -dns hackthissite.org
    ```
 
  **Use a custom wordlist for subdomain brute-forcing:**
    ```bash
-   fierce -dns example.com -wordlist subdomains.txt
+   fierce -dns hackthissite.org -wordlist subdomains.txt
    ```
 
  **Scan an IP range for hosts:**
@@ -78,12 +78,12 @@ This command runs a basic DNS enumeration against `example.com`.
 
  **Save results to a file:**
    ```bash
-   fierce -dns example.com -output results.txt
+   fierce -dns hackthissite.org -output results.txt
    ```
 
 . **Increase threads for faster scanning:**
    ```bash
-   fierce -dns example.com -threads 10
+   fierce -dns hackthissite.org -threads 10
    ```
  **Scanning a Class C network:**
   ```bash
@@ -92,17 +92,17 @@ This command runs a basic DNS enumeration against `example.com`.
 
  **Using a subdomain file:**
   ```bash
-  fierce --domain example.com --subdomain-file subdomains.txt
+  fierce --domain hackthissite.org --subdomain-file subdomains.txt
   ```
 
  **Specifying DNS servers:**
   ```bash
-  fierce --domain example.com --dns-servers 8.8.8.8 1.1.1.1
+  fierce --domain hackthissite.org --dns-servers 8.8.8.8 1.1.1.1
   ```
 
  **Using TCP:**
   ```bash
-  fierce --domain example.com --tcp
+  fierce --domain hackthissite.org --tcp
   ```
 ---
 
