@@ -1,3 +1,5 @@
+![fierce](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Images/fierce.png)
+
 `fierce` is a powerful, open-source reconnaissance tool used for DNS enumeration and subdomain discovery.  It's designed to help security professionals and researchers identify potential vulnerabilities and gather information about a target domain.  While it's a valuable tool, it's essential to use it ethically and legally, only targeting domains you have explicit permission to scan.
 
 **What `fierce` Does:**
