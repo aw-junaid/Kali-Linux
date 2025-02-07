@@ -1,3 +1,5 @@
+![dnsmap](https://github.com/user-attachments/assets/8b8a0961-8b96-4379-9f61-89decc3b498e)
+
 ### What is DNSMap?
 
 DNSMap is an open-source network reconnaissance tool designed to discover subdomains of a target domain. It is commonly used in penetration testing and security assessments to identify potential entry points or vulnerabilities within a domain's infrastructure. DNSMap works by brute-forcing subdomains using a predefined wordlist or by performing dictionary-based attacks.
