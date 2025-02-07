@@ -47,7 +47,7 @@ This repository contains tools and scripts sourced from various GitHub repositor
 
 ### DNS Analysis
 - [**dnsenum**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsenum.md): Multithreaded tool for DNS enumeration.
-- **dnsmap**: Subdomain brute-forcing tool.
+- [**dnsmap**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsmap.md): Subdomain brute-forcing tool.
 - **dnsrecon**: Perform DNS enumeration and zone transfers.
 - **fierce**: DNS reconnaissance tool for locating non-contiguous IP space.
 
