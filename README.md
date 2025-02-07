@@ -52,7 +52,7 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - [**fierce**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/fierce.md): DNS reconnaissance tool for locating non-contiguous IP space.
 
 ### IDS/IPS Identification
-- **lbd**: Load Balancer Detector for identifying load balancers.
+- [**lbd**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/lbd.md): Load Balancer Detector for identifying load balancers.
 - **wafw00f**: Detect web application firewalls (WAFs).
 
 ### Live Host Identification
