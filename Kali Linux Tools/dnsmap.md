@@ -31,67 +31,104 @@ DNSMap is typically pre-installed on penetration testing distributions like Kali
   sudo make install
   ```
 
----
 
-#### Basic Usage:
+#### Options:
+1. **`-w <wordlist-file>`**:
+   - Specifies a custom wordlist file for subdomain brute-forcing.
+   - If not provided, DNSMap uses its built-in wordlist.
 
-1. **Run DNSMap with a Built-in Wordlist**:
-   To scan a target domain using the default wordlist:
-   ```bash
-   dnsmap example.com
-   ```
-   Replace `example.com` with the target domain.
+2. **`-r <regular-results-file>`**:
+   - Saves the results in a human-readable format to the specified file.
 
-2. **Use a Custom Wordlist**:
-   If you have a custom wordlist, specify it with the `-w` option:
-   ```bash
-   dnsmap example.com -w /path/to/wordlist.txt
-   ```
+3. **`-c <csv-results-file>`**:
+   - Saves the results in CSV format to the specified file.
 
-3. **Save Results to a File**:
-   To save the output to a file, use the `-r` option:
-   ```bash
-   dnsmap example.com -r results.txt
-   ```
+4. **`-d <delay-millisecs>`**:
+   - Adds a delay (in milliseconds) between DNS queries to avoid detection or rate-limiting.
 
-4. **Run in Quiet Mode**:
-   To suppress unnecessary output, use the `-q` option:
-   ```bash
-   dnsmap example.com -q
-   ```
-
-5. **Specify a DNS Server**:
-   To use a specific DNS server for queries, use the `-d` option:
-   ```bash
-   dnsmap example.com -d 8.8.8.8
-   ```
+5. **`-i <ips-to-ignore>`**:
+   - Ignores specific IP addresses in the results (useful to avoid false positives).
 
 ---
 
-#### Example Commands:
+### **Examples**
 
-- Scan a domain with the default wordlist:
-  ```bash
-  dnsmap example.com
-  ```
+1. **Basic Scan**:
+   - Scan `example.com` using the default wordlist:
+```bash
+     dnsmap example.com
+     ┌──(komugi㉿komugi)-[~]
+└─$ dnsmap github.com 
+dnsmap 0.36 - DNS Network Mapper
 
-- Scan a domain with a custom wordlist and save results:
-  ```bash
-  dnsmap example.com -w /path/to/wordlist.txt -r output.txt
-  ```
+[+] searching (sub)domains for github.com using built-in wordlist
+[+] using maximum random delay of 10 millisecond(s) between requests
 
-- Scan a domain in quiet mode and use a specific DNS server:
-  ```bash
-  dnsmap example.com -q -d 1.1.1.1
-  ```
+admin.github.com
+IP address #1: 140.82.112.23
+
+blog.github.com
+IPv6 address #1: 2606:50c0:8000::153
+IPv6 address #2: 2606:50c0:8002::153
+IPv6 address #3: 2606:50c0:8003::153
+IPv6 address #4: 2606:50c0:8001::153
+
+blog.github.com
+IP address #1: 185.199.109.153
+IP address #2: 185.199.108.153
+IP address #3: 185.199.111.153
+IP address #4: 185.199.110.153
+
+classroom.github.com
+IP address #1: 140.82.113.21
+
+cs.github.com
+IP address #1: 140.82.112.18
+
+de.github.com
+IP address #1: 140.82.112.18
+
+```
+
+2. **Custom Wordlist**:
+   - Scan `example.com` using a custom wordlist (`yourwordlist.txt`) and save results to `/tmp/domainbf_results.txt`:
+     ```bash
+     dnsmap example.com -w yourwordlist.txt -r /tmp/domainbf_results.txt
+     ```
+
+3. **Add Delay Between Queries**:
+   - Scan `example.com` with a 3-second delay between queries and save results to `/tmp/`:
+     ```bash
+     dnsmap example.com -r /tmp/ -d 3000
+     ```
+
+4. **Save Results in Current Directory**:
+   - Scan `example.com` and save results to `./domainbf_results.txt`:
+     ```bash
+     dnsmap example.com -r ./domainbf_results.txt
+     ```
+
+5. **Ignore Specific IPs**:
+   - Scan `example.com` and ignore specific IP addresses (e.g., `192.168.1.1` and `10.0.0.1`):
+     ```bash
+     dnsmap example.com -i 192.168.1.1,10.0.0.1
+     ```
 
 ---
 
-### Tips for Effective Use:
-- **Custom Wordlists**: Create or use tailored wordlists for better results.
+### **Tips for Using DNSMap Effectively**
+- **Custom Wordlists**: Use tailored wordlists for better results, especially for specific industries or technologies.
+- **Delay Option**: Use the `-d` option to avoid triggering rate limits or detection mechanisms.
+- **Output Formats**: Use `-r` for human-readable results and `-c` for machine-readable CSV output.
+- **False Positives**: Use the `-i` option to ignore IPs that may cause false positives.
+
+---
+
+### **Important Notes**
+- **Legal Use**: Always ensure you have explicit permission to scan the target domain. Unauthorized scanning is illegal and unethical.
 - **Combine with Other Tools**: Use DNSMap alongside tools like `Sublist3r`, `Amass`, or `Assetfinder` for comprehensive subdomain enumeration.
-- **Legal Considerations**: Always ensure you have permission to scan the target domain. Unauthorized scanning can be illegal.
 
 ---
 
-DNSMap is a simple yet powerful tool for discovering subdomains, making it a valuable addition to any security professional's toolkit.
+DNSMap is a lightweight and efficient tool for subdomain discovery, making it a valuable asset for penetration testers and security professionals.
+
