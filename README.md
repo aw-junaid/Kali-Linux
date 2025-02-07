@@ -49,7 +49,7 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - [**dnsenum**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsenum.md): Multithreaded tool for DNS enumeration.
 - [**dnsmap**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsmap.md): Subdomain brute-forcing tool.
 - [**dnsrecon**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dnsrecon.md): Perform DNS enumeration and zone transfers.
-- **fierce**: DNS reconnaissance tool for locating non-contiguous IP space.
+- [**fierce**](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/fierce.md): DNS reconnaissance tool for locating non-contiguous IP space.
 
 ### IDS/IPS Identification
 - **lbd**: Load Balancer Detector for identifying load balancers.
