@@ -155,6 +155,51 @@ To use a specific DNS server for queries:
 ```bash
 dnsenum --dnsserver 8.8.8.8 example.com
 ```
+```bash
+┌──(komugi㉿komugi)-[~]
+└─$ dnsenum --dnsserver 8.8.8.8 example.com
+dnsenum VERSION:1.3.1
+
+-----   example.com   -----                                                                                                                         
+                                                                                                                                                    
+                                                                                                                                                    
+Host's addresses:                                                                                                                                   
+__________________                                                                                                                                  
+                                                                                                                                                    
+example.com.                             75       IN    A        23.192.228.80                                                                      
+example.com.                             75       IN    A        96.7.128.175
+example.com.                             75       IN    A        23.215.0.138
+example.com.                             75       IN    A        96.7.128.198
+example.com.                             75       IN    A        23.215.0.136
+example.com.                             75       IN    A        23.192.228.84
+
+                                                                                                                                                    
+Name Servers:                                                                                                                                       
+______________                                                                                                                                      
+                                                                                                                                                    
+b.iana-servers.net.                      819      IN    A        199.43.133.53                                                                      
+a.iana-servers.net.                      720      IN    A        199.43.135.53
+
+                                                                                                                                                    
+Mail (MX) Servers:                                                                                                                                  
+___________________                                                                                                                                 
+                                                                                                                                                    
+                                                                                                                                                    
+                                                                                                                                                    
+Trying Zone Transfers and getting Bind Versions:                                                                                                    
+_________________________________________________                                                                                                   
+                                                                                                                                                    
+                                                                                                                                                    
+Trying Zone Transfer for example.com on b.iana-servers.net ... 
+AXFR record query failed: REFUSED
+
+Trying Zone Transfer for example.com on a.iana-servers.net ... 
+AXFR record query failed: NOTAUTH
+
+                                                                                                                                                    
+Brute forcing with /usr/share/dnsenum/dns.txt:                                                                                                      
+_______________________________________________                                                                                                     
+```
 - Replace `8.8.8.8` with the IP address of the DNS server you want to use.
 
 ---
