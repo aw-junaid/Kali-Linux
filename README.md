@@ -56,7 +56,7 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - [**wafw00f**: Detect web application firewalls (WAFs).](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/wafw00f.md)
 
 ### Live Host Identification
-- **arping**: ARP-level ping to find live hosts on a network.
+- [**arping**: ARP-level ping to find live hosts on a network.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/arping.md)
 - **fping**: High-performance ping sweep tool.
 - **hping3**: TCP/IP packet assembler for testing network security.
 - **masscan**: Mass IP scanner with fast scanning speed.
