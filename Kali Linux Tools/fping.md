@@ -12,75 +12,195 @@
 
 **How to Use `fping`:**
 
-1. **Basic Usage:**
+**Basic Usage:**
 
-   ```bash
-   fping <host1> <host2> <host3> ...
-   ```
+```bash
+fping [options] [targets...]
+```
 
-   Replace `<host1>`, `<host2>`, etc., with the hostnames or IP addresses you want to ping.  You can list as many hosts as you need.
+* `fping`: The command to execute the tool.
+* `[options]`: Flags and parameters to customize the behavior.
+* `[targets...]`: The list of target hosts or IP addresses.
 
-2. **Pinging a Range of IP Addresses:**
+**Probing Options (Control *how* pings are sent):**
 
-   `fping` can also ping a range of IP addresses using a special syntax:
+* `-4, --ipv4`: Only ping IPv4 addresses.
+* `-6, --ipv6`: Only ping IPv6 addresses.
+* `-b, --size=BYTES`: Amount of ping data to send (default: 56 bytes).
+* `-B, --backoff=N`: Set exponential backoff factor (default: 1.5).  If a ping fails, `fping` waits longer before retrying. This option controls how much longer.
+* `-c, --count=N`: Send N pings to each target (count mode).
+* `-f, --file=FILE`: Read target list from a file (`-` means stdin).
+* `-g, --generate`: Generate target list (if no `-f` is specified). You can give a start and end IP or a CIDR address (e.g., `fping -g 192.168.1.0 192.168.1.255` or `fping -g 192.168.1.0/24`).
+* `-H, --ttl=N`: Set the IP Time To Live (TTL).
+* `-I, --iface=IFACE`: Bind to a particular network interface.
+* `-l, --loop`: Loop mode: send pings continuously.
+* `-m, --all`: Use all IPs of provided hostnames (IPv4 and IPv6), use with `-A`.
+* `-M, --dontfrag`: Set the Don't Fragment flag.
+* `-O, --tos=N`: Set the Type Of Service (TOS) flag.
+* `-p, --period=MSEC`: Interval between pings to one target (in milliseconds).  In loop and count modes, the default is 1000ms.
+* `-r, --retry=N`: Number of retries (default: 3).
+* `-R, --random`: Random packet data.  Useful for testing link compression.
+* `-S, --src=IP`: Set the source IP address.
+* `-t, --timeout=MSEC`: Individual target initial timeout (in milliseconds). The default is 500ms, but in loop and count modes, it uses the `-p` value up to 2000ms.
 
-   ```bash
-   fping 192.168.1.1-100  # Pings 192.168.1.1 through 192.168.1.100
-   ```
+**Output Options (Control *how* results are displayed):**
 
-3. **Reading Hosts from a File:**
+* `-a, --alive`: Show targets that are alive.
+* `-A, --addr`: Show targets by IP address.
+* `-C, --vcount=N`: Same as `-c`, but with verbose output.
+* `-d, --rdns`: Show targets by name (force reverse DNS lookup).
+* `-D, --timestamp`: Print a timestamp before each output line.
+* `-e, --elapsed`: Show elapsed time for returned packets.
+* `-i, --interval=MSEC`: Interval between sending ping packets (default: 10 ms).
+* `-n, --name`: Show targets by name (reverse DNS lookup).
+* `-N, --netdata`: Output compatible with Netdata (requires `-l` and `-Q`).
+* `-o, --outage`: Show accumulated outage time.
+* `-q, --quiet`: Quiet mode (don't show per-target/per-ping results).
+* `-Q, --squiet=SECS`: Same as `-q`, but add interval summary every SECS seconds.
+* `-s, --stats`: Print final statistics.
+* `-u, --unreach`: Show unreachable targets.
+* `-v, --version`: Show version information.
+* `-x, --reachable=N`: Shows if at least N hosts are reachable.
 
-   You can provide a file containing a list of hosts, one per line:
+**Key Improvements and Clarifications:**
 
-   ```bash
-   fping -f <filename>
-   ```
+* **`-g` (Generate):** This is a very useful option for quickly pinging a range of IP addresses.
+* **`-f` (File):** Allows you to easily ping a large number of hosts listed in a file.
+* **`-c` (Count) and `-l` (Loop):** Provide different ways to control how many pings are sent.
+* **`-p` (Period) and `-i` (Interval):** Control the timing of ping packets.  `-p` is for the period between pings *to a single host*, while `-i` is the interval between sending packets *across all hosts*.
+* **Output Options:**  `fping` has a rich set of output options to customize the information displayed.
+* **`-q` and `-Q` (Quiet):** Useful for scripting or when you only need a summary.
 
-4. **Options:**
 
-   `fping` offers various options to customize its behavior:
+## **Installing fping on Kali Linux**  
+fping is **pre-installed** on Kali Linux, but if missing, install it using:  
+```bash
+sudo apt update && sudo apt install fping -y
+```
+Verify the installation with:  
+```bash
+fping -v
+```
 
-   * `-f <filename>`: Reads the list of target hosts from the specified file.
-   * `-g`: Generates IP addresses within a specified range (similar to the range syntax).
-   * `-r <retries>`: Sets the number of retry attempts for each host.
-   * `-t <timeout>`: Sets the timeout for receiving a response (in seconds).
-   * `-p <period>`: Sets the time between sending packets (in milliseconds).
-   * `-c <count>`: Sets the number of pings to send to each host.
-   * `-b <bytes>`: Sets the number of data bytes to send in the ping packets.
-   * `-q`: Quiet mode (only shows a summary).
-   * `-v`: Verbose output (shows more details).
-   * `-a`: Show addresses instead of hostnames.
-   * `-n`: Do not resolve hostnames.
-   * `-u`: Show unreachable hosts.
-   * `-I <interface>`: Specifies the network interface to use.
-   * `-m <ttl>`: Sets the Time To Live (TTL) for the packets.
+---
 
-5. **Example Usage:**
+## **Example**  
 
-   * Pinging multiple hosts:
-     ```bash
-     fping example.com 192.168.1.10 10.0.0.1
-     ```
+### **1. Ping a Single Host**  
+```bash
+fping hackthissite.org
+```
+- Sends an **ICMP Echo Request** to `hackthissite.org`.  
 
-   * Pinging a range of IP addresses:
-     ```bash
-     fping 192.168.1.1-255
-     ```
+### **2. Ping Multiple Hosts**  
+```bash
+fping 192.168.1.1 192.168.1.2 hackthissite.org
+```
+- Checks connectivity for multiple targets **simultaneously**.  
 
-   * Reading hosts from a file:
-     ```bash
-     fping -f hosts.txt
-     ```
+### **3. Scan a Network Range (CIDR Notation)**  
+```bash
+fping -g 192.168.1.0/24
+```
+- Scans the entire **192.168.1.x subnet** for active devices.  
 
-   * Setting the number of retries and timeout:
-     ```bash
-     fping -r 3 -t 2 example.com
-     ```
+### **4. Read Targets from a File**  
+```bash
+fping -f targets.txt
+```
+- Loads a list of IPs or hostnames from `targets.txt`.  
 
-   * Quiet mode:
-     ```bash
-     fping -q example.com 192.168.1.1-10
-     ```
+### **5. Continuous Ping (Loop Mode)**  
+```bash
+fping -l hackthissite.org
+```
+- Pings **continuously** like the standard `ping` command.  
+
+---
+
+## **Advanced Options**  
+
+### **6. Specify IPv4 or IPv6 Only**  
+```bash
+fping -4 hackthissite.org  # IPv4 only  
+fping -6 hackthissite.org  # IPv6 only
+```
+- `-4` → Use only **IPv4**.  
+- `-6` → Use only **IPv6**.  
+
+### **7. Adjust Packet Size**  
+```bash
+fping -b 128 hackthissite.org
+```
+- `-b 128` → Sends **128 bytes** instead of the default **56 bytes**.  
+
+### **8. Limit the Number of Ping Attempts**  
+```bash
+fping -c 5 hackthissite.org
+```
+- `-c 5` → Sends **5 ICMP packets** and stops.  
+
+### **9. Set Interval Between Pings**  
+```bash
+fping -p 500 -c 5 hackthissite.org
+```
+- `-p 500` → Waits **500ms** between pings.  
+- `-c 5` → Sends **5 packets** and stops.  
+
+### **10. Set Timeout for Response**  
+```bash
+fping -t 300 192.168.1.1
+```
+- `-t 300` → Waits **300ms** for a response before marking a host as **unreachable**.  
+
+### **11. Show Only Active Hosts**  
+```bash
+fping -a -g 192.168.1.0/24
+```
+- `-a` → Displays **only alive hosts**.  
+
+### **12. Show Only Unreachable Hosts**  
+```bash
+fping -u -g 192.168.1.0/24
+```
+- `-u` → Displays **only unreachable hosts**.  
+
+### **13. Show Results with Timestamps**  
+```bash
+fping -D hackthissite.org
+```
+- `-D` → **Prints timestamps** before each output line.  
+
+### **14. Reverse DNS Lookup**  
+```bash
+fping -n 192.168.1.1
+```
+- `-n` → Displays **hostnames instead of IPs** (reverse DNS lookup).  
+
+### **15. Set TTL (Time-To-Live Hops)**  
+```bash
+fping -H 64 hackthissite.org
+```
+- `-H 64` → Sets the TTL value to **64 hops**.  
+
+### **16. Output Results to a File**  
+```bash
+fping -c 3 hackthissite.org > results.txt
+```
+- Saves **fping output** to `results.txt`.  
+
+---
+
+## **Example Output**
+```
+192.168.1.1 is alive
+192.168.1.2 is unreachable
+192.168.1.3 is alive
+```
+- `is alive` → Host is **reachable**.  
+- `is unreachable` → Host is **down or blocking ICMP**.  
+
+---
 
 **Interpreting the Results:**
 
