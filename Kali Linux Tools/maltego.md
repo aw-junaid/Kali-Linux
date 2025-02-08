@@ -1,3 +1,5 @@
+![maltego.png](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Images/Maltego/maltego.png)
+
 ### **What is Maltego?**  
 Maltego is an **OSINT (Open Source Intelligence) and data visualization tool** used for **cybersecurity, digital forensics, and threat intelligence**. It helps users discover **relationships between people, domains, IPs, email addresses, social media accounts, and other online assets** using various data sources and transforms.  
 
@@ -12,7 +14,9 @@ Maltego is an **OSINT (Open Source Intelligence) and data visualization tool** u
 
 ## **How to Use Maltego**
 ### **1️⃣ Installation**  
-- Download Maltego from the [official website](https://www.maltego.com/downloads/).  
+- Download Maltego from the [official website](https://www.maltego.com/downloads/).
+![Maltego)](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Images/Maltego/mail%20to%20go.png)
+![linux.png](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Images/Maltego/mailtogo%20account%20creating%20on%20linux.png)
 - Available for **Windows, Linux, and macOS**.  
 - Requires a **Maltego account** to log in.  
 
