@@ -57,12 +57,12 @@ This repository contains tools and scripts sourced from various GitHub repositor
 
 ### Live Host Identification
 - [**arping**: ARP-level ping to find live hosts on a network.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/arping.md)
-- **fping**: High-performance ping sweep tool.
-- **hping3**: TCP/IP packet assembler for testing network security.
-- **masscan**: Mass IP scanner with fast scanning speed.
-- **netcat**: General-purpose network analysis and debugging tool.
-- **thcping6**: Ping IPv6 hosts using TCP.
-- **unicornscan**: Network reconnaissance and port scanner.
+- [**fping**: High-performance ping sweep tool.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/fping.md)
+- [**hping3**: TCP/IP packet assembler for testing network security.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/hping3.md)
+- [**masscan**: Mass IP scanner with fast scanning speed.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/masscan.md)
+- [**netcat**: General-purpose network analysis and debugging tool.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/netcat.md)
+- [**thc-ipv6**: Is a suite of tools for attacking and auditing IPv6 networks.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/thc-ipv6.md)  **_Imp Tool for bug bounty._**
+- [**unicornscan**: Network reconnaissance and port scanner.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/unicornscan.md)
 
 ### Network & Port Scanners
 - **nmap**: Network mapping and port scanning tool.
