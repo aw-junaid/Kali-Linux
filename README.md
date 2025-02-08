@@ -65,11 +65,10 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - [**unicornscan**: Network reconnaissance and port scanner.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/unicornscan.md)
 
 ### Network & Port Scanners
-- **nmap**: Network mapping and port scanning tool.
-
+- [**nmap**: Network mapping and port scanning tool.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Nmap.md)
 ### OSINT Analysis
-- **maltego**: Open-source intelligence and forensics platform.
-- **spiderfoot**: Automated OSINT tool for threat intelligence.
+- [**maltego**: Open-source intelligence and forensics platform.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/maltego.md)
+- [**spiderfoot**: Automated OSINT tool for threat intelligence.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/spiderfoot.md)
 
 ### Route Analysis
 - **netdiscover**: Active/passive reconnaissance tool for networks.
