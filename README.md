@@ -71,7 +71,7 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - [**spiderfoot**: Automated OSINT tool for threat intelligence.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/spiderfoot.md)
 
 ### Route Analysis
-- **netdiscover**: Active/passive reconnaissance tool for networks.
+- [**netdiscover**: Active/passive reconnaissance tool for networks.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/netdiscover.md)
 - **netmask**: Analyzes and manages IP subnets.
 
 ### SMB Analysis
