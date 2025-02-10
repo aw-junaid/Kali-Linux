@@ -74,11 +74,11 @@ This repository contains tools and scripts sourced from various GitHub repositor
 
 ### Route Analysis
 - [**netdiscover**: Active/passive reconnaissance tool for networks.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/netdiscover.md)
-- **netmask**: Analyzes and manages IP subnets.
+- [**netmask**: Analyzes and manages IP subnets.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/netmask.md)
 
 ### SMB Analysis
-- **nbtscan**: Scans for NetBIOS name information.
-- **smbscan**: Assesses SMB shares for security issues.
+- [**nbtscan**: Scans for NetBIOS name information.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/nbtscan.md)
+- [**smbmap**: Assesses SMB shares for security issues.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/smbmap.md)
 
 ### SMTP Analysis
 - **smtp-user-enum**: Enumerates valid SMTP users.
