@@ -15,104 +15,137 @@ Given an IP address, `netmask` calculates and displays the corresponding network
 
 **How to Use `netmask`:**
 
-**Basic Usage:**
+---
 
+### **Basic Usage**
+The general syntax is:
 ```bash
 netmask spec [spec ...]
 ```
+- `spec` is a specification that defines an IP address, range, or network.
 
-* `netmask`: The command to run the utility.
-* `spec [spec ...]`: One or more specifications for IP addresses and netmasks.
+---
 
-**Options:**
+### **Options**
+| Option          | Description                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| `-h, --help`    | Display a summary of the available options.                                 |
+| `-v, --version` | Print the version number of the `netmask` utility.                          |
+| `-d, --debug`   | Enable debug mode to print status/progress information.                     |
+| `-s, --standard`| Output address/netmask pairs in standard format (e.g., `192.168.1.0/24`).   |
+| `-c, --cidr`    | Output in CIDR format (e.g., `192.168.1.0/24`).                             |
+| `-i, --cisco`   | Output in Cisco-style format (e.g., `192.168.1.0 255.255.255.0`).           |
+| `-r, --range`   | Output the range of IP addresses in the network (e.g., `192.168.1.1-254`).  |
+| `-x, --hex`     | Output address/netmask pairs in hexadecimal format.                         |
+| `-o, --octal`   | Output address/netmask pairs in octal format.                               |
+| `-b, --binary`  | Output address/netmask pairs in binary format.                              |
+| `-n, --nodns`   | Disable DNS lookups for hostnames.                                          |
+| `-f, --files`   | Treat arguments as input files containing specifications.                   |
 
-* `-h, --help`: Print a summary of the options (this help message).
-* `-v, --version`: Print the version number.
-* `-d, --debug`: Print status/progress information (for debugging).
-* `-s, --standard`: Output address/netmask pairs in standard dotted-decimal notation.
-* `-c, --cidr`: Output CIDR format address lists (e.g., 192.168.1.0/24).
-* `-i, --cisco`: Output Cisco-style address lists (wildcard masks).
-* `-r, --range`: Output IP address ranges.
-* `-x, --hex`: Output address/netmask pairs in hexadecimal.
-* `-o, --octal`: Output address/netmask pairs in octal.
-* `-b, --binary`: Output address/netmask pairs in binary.
-* `-n, --nodns`: Disable DNS lookups for addresses.
-* `-f, --files`: Treat arguments as input files (each file contains address specifications).
+---
 
-**Definitions (How to specify addresses and masks):**
+### **Specifications (spec)**
+A `spec` defines the IP address, range, or network. It can be any of the following formats:
 
-* **`spec` can be any of:**
-    * `address`: A single IP address.
-    * `address:address`: A range of IP addresses (inclusive).
-    * `address:+address`: A range of IP addresses (from `address` up to `address + address`).
-    * `address/mask`: An IP address with a netmask specified.
+1. **Single Address**:
+   - Example: `192.168.1.10`
+   - Represents a single IP address.
 
-* **`address` can be any of:**
-    * `N`: A decimal number.
-    * `0N`: An octal number (starts with 0).
-    * `0xN`: A hexadecimal number (starts with 0x).
-    * `N.N.N.N`: A dotted-quad IP address (e.g., 192.168.1.1).
-    * `hostname`: A DNS domain name (will be resolved to an IP address).
+2. **Address Range**:
+   - Example: `192.168.1.10:192.168.1.20`
+   - Represents a range of IP addresses from `192.168.1.10` to `192.168.1.20`.
 
-* **`mask`:** The number of bits set to one from the left in the netmask (e.g., `/24` means 24 bits are set to 1).
+3. **Address with Offset**:
+   - Example: `192.168.1.10:+10`
+   - Represents a range starting at `192.168.1.10` and extending 10 addresses forward.
 
-**Examples:**
+4. **Address with Netmask**:
+   - Example: `192.168.1.0/24`
+   - Represents a network with the specified netmask.
 
-* **Standard Output:**
-  ```bash
-  netmask 192.168.1.10/24
-  ```
-  Output:
-  ```
-  192.168.1.10 255.255.255.0
-  ```
+---
 
-* **CIDR Output:**
-  ```bash
-  netmask -c 192.168.1.0/24
-  ```
-  Output:
-  ```
-  192.168.1.0/24
-  ```
+### **Address Formats**
+An address can be specified in any of the following formats:
+- **Decimal**: `3232235776` (equivalent to `192.168.1.0`).
+- **Octal**: `0300.0250.0001.0000` (equivalent to `192.168.1.0`).
+- **Hexadecimal**: `0xC0A80100` (equivalent to `192.168.1.0`).
+- **Dotted Quad**: `192.168.1.0`.
+- **Hostname**: `example.com` (resolved to an IP address via DNS, unless `--nodns` is used).
 
-* **Cisco Output:**
-  ```bash
-  netmask -i 192.168.1.0/24
-  ```
-  Output:
-  ```
-  192.168.1.0 0.0.0.255
-  ```
+---
 
-* **IP Range:**
-  ```bash
-  netmask 192.168.1.1:192.168.1.10
-  ```
-  Output (using `-r`):
-  ```
-  192.168.1.1-192.168.1.10
-  ```
+### **Examples**
 
-* **Hex Output:**
-  ```bash
-  netmask -x 192.168.1.10/24
-  ```
-  Output:
-  ```
-  0xc0a8010a 0xffffff00
-  ```
+1. **Standard Output**:
+   ```bash
+   netmask 192.168.1.0/24 --standard
+   ```
+   Output:
+   ```
+   192.168.1.0/255.255.255.0
+   ```
 
-* **Using a file:**
-  Create a file named `ips.txt` with the following content:
-  ```
-  192.168.1.10/24
-  10.0.0.1/16
-  ```
-  Then run:
-  ```bash
-  netmask -f ips.txt
-  ```
+2. **CIDR Output**:
+   ```bash
+   netmask 192.168.1.0/24 --cidr
+   ```
+   Output:
+   ```
+   192.168.1.0/24
+   ```
+
+3. **Cisco Output**:
+   ```bash
+   netmask 192.168.1.0/24 --cisco
+   ```
+   Output:
+   ```
+   192.168.1.0 255.255.255.0
+   ```
+
+4. **Range Output**:
+   ```bash
+   netmask 192.168.1.0/24 --range
+   ```
+   Output:
+   ```
+   192.168.1.1-192.168.1.254
+   ```
+
+5. **Hexadecimal Output**:
+   ```bash
+   netmask 192.168.1.0/24 --hex
+   ```
+   Output:
+   ```
+   0xC0A80100/0xFFFFFF00
+   ```
+
+6. **Binary Output**:
+   ```bash
+   netmask 192.168.1.0/24 --binary
+   ```
+   Output:
+   ```
+   11000000.10101000.00000001.00000000/11111111.11111111.11111111.00000000
+   ```
+
+7. **Disable DNS Lookup**:
+   ```bash
+   netmask example.com --nodns
+   ```
+   Output:
+   ```
+   (Resolves `example.com` to its IP address without DNS lookup.)
+   ```
+
+8. **Input from File**:
+   ```bash
+   netmask --files input.txt
+   ```
+   (Processes specifications from `input.txt`.)
+
 
 **Interpreting the Results:**
 
