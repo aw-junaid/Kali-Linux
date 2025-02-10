@@ -1,3 +1,5 @@
+![netmask.png](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Images/netmask.png)
+
 `netmask` is a simple command-line utility used to determine the network mask (also known as a subnet mask) associated with a given IP address.  It's a quick way to find out the network address and broadcast address for a given IP.
 
 **What `netmask` Does:**
