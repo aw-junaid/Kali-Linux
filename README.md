@@ -68,9 +68,12 @@ This repository contains tools and scripts sourced from various GitHub repositor
 
 ### Network & Port Scanners
 - [**nmap**: Network mapping and port scanning tool.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/Nmap.md)
+
+  
 ### OSINT Analysis
 - [**maltego**: Open-source intelligence and forensics platform.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/maltego.md)
 - [**spiderfoot**: Automated OSINT tool for threat intelligence.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/spiderfoot.md)
+- [**recon-ng**: OSINT framework for automated reconnaissance.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/recon-ng.md)
 
 ### Route Analysis
 - [**netdiscover**: Active/passive reconnaissance tool for networks.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/netdiscover.md)
@@ -81,31 +84,29 @@ This repository contains tools and scripts sourced from various GitHub repositor
 - [**smbmap**: Assesses SMB shares for security issues.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/smbmap.md)
 
 ### SMTP Analysis
-- **smtp-user-enum**: Enumerates valid SMTP users.
-- **swaks**: Swiss Army Knife for SMTP testing.
+- [**smtp-user-enum**: Enumerates valid SMTP users.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/smtp-user-enum.md)
+- [**swaks**: Swiss Army Knife for SMTP testing.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/swaks.md)
 
 ### SNMP Analysis
-- **onesixtyone**: SNMP scanner for network devices.
-- **snmp-check**: Enumerates SNMP devices and data.
+- [**onesixtyone**: SNMP scanner for network devices.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/onesixtyone.md)
+- [**snmp-check**: Enumerates SNMP devices and data.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/snmp-check.md)
 
 ### SSL Analysis
-- **ssldump**: Analyzes SSL connections.
-- **sslh**: Multiplexer for SSL and non-SSL connections.
-- **sslscan**: Tests SSL/TLS ciphers and vulnerabilities.
-- **sslyze**: Audits SSL/TLS configurations.
+- [**ssldump**: Analyzes SSL connections.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/ssldump.md)
+- [**sslh**: Multiplexer for SSL and non-SSL connections.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/sslh.md)
+- [**sslscan**: Tests SSL/TLS ciphers and vulnerabilities.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/sslscan.md)
+- [**sslyze**: Audits SSL/TLS configurations.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/sslyze.md)
+
 
 ### Additional Tools
-- **amass**: Subdomain enumeration tool.
-- **dmitry**: Deepmagic Information Gathering Tool.
-- **ike-scan**: Identifies VPN servers and devices using IKE.
-- **recon-ng**: OSINT framework for automated reconnaissance.
-
+- [**amass**: Subdomain enumeration tool.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/amass.md)
+- [**dmitry**: Deepmagic Information Gathering Tool.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/dmitry.md)
+- [**ike-scan**: Identifies VPN servers and devices using IKE.](https://github.com/aw-junaid/Kali-Linux/blob/main/Kali%20Linux%20Tools/ike-scan.md)
 
 ### Vulnerability Analysis Tools
 - **generic_chunked**: Checks for vulnerabilities in chunked encoding.
 - **voiphopper**: Tests VLAN hopping in VoIP networks.
 - **nikto**: Web server vulnerability scanner.
-- **nmap**: Network scanning with vulnerability detection scripts.
 - **unix-privesc-check**: Identifies privilege escalation paths on Unix systems.
 
 ### Web Application Analysis Tools
