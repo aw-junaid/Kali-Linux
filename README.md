@@ -42,9 +42,6 @@
 
 **A guide to using Kali Linux tools for web penetration testing, ethical hacking, forensics, and bug bounty. Covers setup, key tools, methodologies, and best practices. Optimized for security professionals.**
 
-Here's the complete enhanced document with new categories and tools, including GitHub links where available:
-
----
 
 > [!Note]
 > This repository contains tools and scripts sourced from various GitHub repositories and other open-source platforms. All original works are credited to their respective authors. If you are the owner of any content and wish to have it removed, please contact the repository author directly. This project is intended for educational and ethical purposes only. Unauthorized use, distribution, or modification of these tools without proper consent is prohibited. By using this repository, you agree to comply with all applicable laws and ethical guidelines. The author is not responsible for any misuse or damage caused by the tools provided herein.
