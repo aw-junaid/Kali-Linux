@@ -358,6 +358,7 @@ Specialized tools for container security assessment.
 - [**dockle**](https://github.com/goodwithtech/dockle): A container image linter for security, helping to identify best practice violations.
 - [**kubeaudit**](https://github.com/Shopify/kubeaudit): A command-line tool to audit Kubernetes clusters for security issues.
 - [**kube-bench**](https://github.com/aquasecurity/kube-bench): A tool that checks Kubernetes clusters against the CIS Kubernetes Benchmark.
+- [Darkmoon](https://github.com/ASCIT31/Dark-Moon) - an open source (GPL-3.0) autonomous AI penetration testing platform for web, API, Active Directory and Kubernetes.
 - [**kubesec**](https://github.com/controlplaneio/kubesec): A security risk analysis tool for Kubernetes resources.
 
 ## 14. Physical Security/Hardware Hacking
